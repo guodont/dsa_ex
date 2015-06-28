@@ -10,10 +10,10 @@ const int pagetable[pagetablelength]={0,42,29,15,45,31,44,43,
 				               52,36,58,35,57,34,21,63,
 				               5,37,18,8,62,56,20,54,
 				               60,19,38,9,61,55,59,53};
-#include<iostream.h>
-#include<iomanip.h>
-
-void main()
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main(void)
 {
 	int logicaladdress=0;
 	int pagenum=0;
@@ -32,8 +32,9 @@ void main()
     if(pagenum>pagetablelength)         //判断是否跃界
 	{
 		cout<<"本次访问的地址已超出进程的地址空间，系统将产生越界中断！\n";
-		return;
+		return 0;
 	}
 	cout<<"对应的物理地址为（十进制）：\n"<<pagetable[pagenum]*pagesize+w<<endl;
+	return 0;
 }
 
